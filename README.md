@@ -9,3 +9,7 @@ docker build -t tag:version --force-rm https://github.com/hbthlw/node-ubuntu.git
 
 https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
 
+# Dockerizing a Node.js web app
+
+https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
+
