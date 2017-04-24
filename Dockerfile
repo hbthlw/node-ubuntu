@@ -8,13 +8,11 @@ RUN apt-get -y update && apt-get install -y curl wget libcairo2-dev libjpeg8-dev
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 6.10.2
 
-RUN wget https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.tar.gz
-RUN tar xvf node-v${NODE_VERSION}.tar.gz
-WORKDIR node-v${NODE_VERSION}
-RUN ./configure
-RUN make
-RUN make check
-RUN make install
+RUN curl -O https://nodejs.org/download/release/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz
+RUN curl -O https://nodejs.org/download/release/v${NODE_VERSION}/SHASUMS256.txt
+RUN grep node-v${NODE_VERSION}-linux-x64.tar.gz SHASUMS256.txt | sha256sum -c -
+RUN tar -xvf node-v${NODE_VERSION}-linux-x64.tar.gz --strip-components=1 -C /usr/local/bin
+
 RUN node -v
 RUN npm -v
 
