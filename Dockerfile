@@ -5,14 +5,7 @@ RUN groupadd --gid 1000 node \
 
 RUN apt-get -y update && apt-get install -y \
   curl \
-  wget \
-  libcairo2-dev \
-  libjpeg8-dev \
-  libpango1.0-dev \
-  libgif-dev \
-  build-essential \
-  g++ \
-  gcc
+  wget 
 
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 6.10.2
