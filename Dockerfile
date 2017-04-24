@@ -18,4 +18,4 @@ RUN make install
 RUN node -v
 RUN npm -v
 
-#CMD [ "node" ]
+CMD [ "node" ]
