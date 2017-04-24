@@ -11,7 +11,7 @@ ENV NODE_VERSION 6.10.2
 RUN curl -O https://nodejs.org/download/release/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz
 RUN curl -O https://nodejs.org/download/release/v${NODE_VERSION}/SHASUMS256.txt
 RUN grep node-v${NODE_VERSION}-linux-x64.tar.gz SHASUMS256.txt | sha256sum -c -
-RUN tar -xvf node-v${NODE_VERSION}-linux-x64.tar.gz --strip-components=1 -C /usr/local/bin
+RUN tar -xvf node-v${NODE_VERSION}-linux-x64.tar.gz --strip-components=1 -C /usr/local
 
 RUN node -v
 RUN npm -v
