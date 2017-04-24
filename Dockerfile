@@ -3,7 +3,16 @@ FROM ubuntu:16.04
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
-RUN apt-get -y update && apt-get install -y curl wget libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++ gcc
+RUN apt-get -y update && apt-get install -y \
+  curl \
+  wget \
+  libcairo2-dev \
+  libjpeg8-dev \
+  libpango1.0-dev \
+  libgif-dev \
+  build-essential \
+  g++ \
+  gcc
 
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 6.10.2
